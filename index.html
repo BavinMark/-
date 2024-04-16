@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="auto" content='spider'>
+	<meta charset="UTF-8">
+	<title>陇南旅游推荐网</title>
+	<link rel="icon" href="img/favicon.ico">
+	<link rel="icon" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/buy.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<header id="header">
+		<div class="center">
+			<h1 class="logo">陇南旅游推荐网</h1>
+			<nav style='overflow:hidden;'>
+				<h2 class="none">网站导航</h2>
+			<ul class="link">
+					<li ><a href="index.html">首页</a></li>
+					<li><a href="information.html">旅游咨询</a></li>
+					<li><a href="buy.html">机票订购</a></li>
+					<li><a href="scenery.html">风景欣赏</a></li>
+					<li><a href="about.html">关于我们</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="search">
+		<div id="mask"></div>
+		<div class="center">
+		</div>
+		<input class="search" id="inp" type="text" placeholder='请输入城市或景点'/>  
+		<button class="button" id="searchBtn">搜索</button>  
+		  
+		<script type="text/javascript">  
+		document.getElementById("searchBtn").addEventListener("click", function() {  
+		    var inputValue = document.getElementById("inp").value.trim().toLowerCase(); // 去除首尾空格并转换为小写  
+		    var targetUrl;  
+		      
+		    switch (inputValue) {  
+		        case '两当':  
+		            targetUrl = 'ld.html'; // 当输入'两当'时，跳转到ld.html页面  
+		            break;  
+		        case '西和':  
+		            targetUrl = 'xh.html'; // 当输入'西和'时，跳转到xh.html页面  
+		            break;  
+		        case '武都':  
+		            targetUrl = 'wd.html'; // 当输入'武都'时，跳转到wd.html页面  
+		            break;  
+		        case '成县':  
+		            targetUrl = 'cx.html'; // 当输入'成县'时，跳转到cx.html页面  
+		            break;  
+		        case '徽县':  
+		            targetUrl = 'hx.html'; // 当输入'徽县'时，跳转到hx.html页面  
+		            break;  
+		        case '文县':  
+		            targetUrl = 'wx.html'; // 当输入'文县'时，跳转到wx.html页面  
+		            break;  
+		        case '康县':  
+		            targetUrl = 'kx.html'; // 当输入'康县'时，跳转到kx.html页面  
+		            break;  
+		        case '礼县':  
+		            targetUrl = 'lx.html'; // 当输入'礼县'时，跳转到lx.html页面  
+		            break;  
+		        case '宕昌':  
+		            targetUrl = 'tc.html'; // 当输入'宕昌'时，跳转到tc.html页面  
+		            break;  
+		        default:  
+		            alert('请输入正确的词汇（两当、西和、武都、成县、徽县、文县、康县、礼县或宕昌）');  
+		            return; // 如果输入的不是上述词汇之一，则不跳转并弹出提示  
+		    }   
+		    window.location.href = targetUrl; // 跳转到目标页面  
+		});  
+			/*搜索框*/
+			var search=document.getElementById('inp');
+			var mask=document.getElementById('mask');
+			search.onfocus=opacity;
+			search.onblur=stop;
+			function opacity(){
+				mask.style.backgroundColor='rgba(0,0,0,.4)';
+			}
+			function stop(){
+				mask.style.backgroundColor='rgba(0,0,0,0)';
+			}
+		</script>
+	</div>
+
+
+	<div id="tour">
+		<section class='center'>
+			<h2>热门旅游</h2>
+			<p>自助旅游、自驾旅游 、主题旅游等各种热门最新旅游推荐</p>
+		</section>
+		<figure>
+			<a href="#"><img src="img/tour1.jpg" alt="武都1日游"></a>
+			<figcaption><strong class="title">&lt;武都1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class="price">¥ <strong>400</strong> 起</span>
+			<em class="sat">满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour2.jpg" alt='康县'></a>
+			<figcaption><strong class='title'>&lt;康县1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour3.jpg" alt='文县'></a>
+			<figcaption><strong class='title'>&lt;文县1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour4.jpg" alt='成县'></a>
+			<figcaption><strong class='title'>&lt;成县1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour5.jpg" alt='宕昌'></a>
+			<figcaption><strong class='title'>&lt;宕昌1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour6.jpg" alt='西和'></a>
+			<figcaption><strong class='title'>&lt;西和1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour7.jpg" alt='礼县'></a>
+			<figcaption><strong class='title'>&lt;礼县1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour8.jpg" alt='徽县'></a>
+			<figcaption><strong class='title'>&lt;徽县1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+
+		<figure>
+			<a href="#"><img src="img/tour9.jpg" alt='两当'></a>
+			<figcaption><strong class='title'>&lt;两当1日游&gt;</strong>包团特惠，超丰富景点，无自费，更赠送100元代金券<</figcaption>
+			<div>
+			<span class='price'>¥ <strong>400</strong> 起</span>
+			<em class='sat'>满意度90%</em>
+			</div>
+			<div class="type">
+				市内旅游
+			</div>
+		</figure>
+	</div>
+	
+		<footer id='foot'>
+			<div class="top">
+				<div class="block left ">
+					<h2>友情链接</h2>
+					<hr>
+					<ul>
+						<a href="https://www.mct.gov.cn/" target="_blank">文化和旅游部</a><br>  
+						<a href="https://wlt.gansu.gov.cn/" target="_blank">甘肃省文化和旅游厅</a><br>  
+						<a href="https://www.longnan.gov.cn/zfxxgk/public/column/4455621?type=4&action=list" target="_blank">陇南市文化广电和旅游局</a><br>  
+						<a href="https://www.12306.cn/index/" class="sky1">火车票查询</a><br>
+					</ul>
+				</div>
+				<div class="block center ">
+					<h2>友情链接</h2>
+					<hr>
+					<ul>
+						<a href="https://www.ctrip.com/" target="_blank">携程旅行</a><br>
+						<a href="https://www.tianxun.com/" target="_blank">特价机票</a><br>
+						<a href="https://cyberpolice.mps.gov.cn/#/"target="_blank">有害信息举报专区</a><br>
+						<a href="https://www.creditchina.gov.cn/"target="_blank">信用中国</a><br>
+					</ul>
+				</div>
+				<div class="block right ">
+					<h2>友情链接</h2>
+					<hr>
+					<ul>
+						<a href="https://www.tuniu.com/" target="_blank">途牛旅行</a><br>
+						<a href="https://www.qunar.com/" target="_blank">去哪儿旅行网</a><br>
+						<a href="https://www.ly.com/" target="_blank">同程旅行网</a><br>
+						<a href="https://www.mafengwo.cn/" target="_blank">马蜂窝</a><br>
+					</ul>
+				</div>
+			</div>
+			<div class="bottom">
+				2024 陇南旅游推荐网 | LNLYTJW | 版权所有 &copy; 2024 陇南旅游推荐网
+			</div>
+		</footer>
+</body>
+</html>

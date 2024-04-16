@@ -1,0 +1,286 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>武都旅游信息</title>、
+	  <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="style.css"> 
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/buy.css">
+</head>  
+<body>  
+  <header id='header'>
+  	<div class='center'>
+  		<h1 class="logo1">武都旅游信息</h1>
+  		<nav style='overflow:hidden;'>
+  			<h2 class="none">网站导航</h2>
+  		<ul class="link">
+  				<li ><a href="index.html">首页</a></li>
+  				<li><a href="information.html">旅游咨询</a></li>
+  				<li><a href="buy.html">机票订购</a></li>
+  				<li><a href="scenery.html">风景欣赏</a></li>
+				<li><a href="about.html">关于我们</a></li>
+  			</ul>
+  		</nav>
+  	</div>
+  </header>
+	<style>
+	        /* 顶部图片样式 */
+	        .hero-image {
+	            height: 400px;
+	            background-image: url('img/wd/wd.jpg');
+	            background-size: cover;
+	            background-position: center;
+	            display: flex;
+	            justify-content: center;
+	            align-items: center;
+	            color: white;
+	            text-shadow: 2px 2px 4px #000;
+	            margin-bottom: 20px;
+	        }
+	        /* 图片小块样式 */
+	        .image-blocks {
+	            display: flex;
+	            justify-content: space-between;
+	            flex-wrap: wrap;
+	            padding: 20px 0;
+	        }
+	        .image-block {
+	            width: calc(33% - 10px); /* 减去间距 */
+	            margin: 5px;
+	            overflow: hidden;
+	            position: relative;
+	            cursor: pointer;
+				position: relative;
+	        }
+			.image-block .text {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 18px;
+				opacity: 0;
+				transition: opacity 0.5s;
+				text-align: center;
+				z-index: 2;
+			}
+			        .image-block:hover .text {
+			            opacity: 1;
+						}
+	        .image-block img {
+	            width: 100%;
+	            display: block;
+	            transition: opacity 0.5s;
+	        }
+	        .image-block:hover img {
+	            opacity: 0.7;
+	        }
+	        .image-block .overlay {
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	            background-color: rgba(0, 0, 0, 0.7);
+	            display: flex;
+	            justify-content: center;
+	            align-items: center;
+	            opacity: 0;
+	            transition: opacity 0.5s;
+	            color: white;
+	            font-size: 18px;
+	            text-align: center;
+	            z-index: 1;
+	        }
+	        .image-block:hover .overlay {
+	            opacity: 1;
+	        }
+	        /* 弹窗样式 */
+	        .modal {
+	            display: none;
+	            position: fixed;
+	            z-index: 1;
+	            left: 0;
+	            top: 0;
+	            width: 100%;
+	            height: 100%;
+	            overflow: auto;
+	            background-color: rgba(0,0,0,0.4);
+	        }
+	        .modal-content {
+	            background-color: #fefefe;
+	            margin: 15% auto;
+	            padding: 20px;
+	            border: 1px solid #888;
+	            width: 80%;
+	            position: relative;
+	        }
+	        .close {
+	            color: #aaa;
+	            float: right;
+	            font-size: 28px;
+	            font-weight: bold;
+	        }
+	        .close:hover,
+	        .close:focus {
+	            color: black;
+	            text-decoration: none;
+	            cursor: pointer;
+	        }
+	        /* 返回首页按钮样式 */
+	        .back-home {
+	            text-align: center;
+	            margin-top: 20px;
+	        }
+	        .back-home a {
+	            padding: 10px 20px;
+	            text-decoration: none;
+	            color: white;
+	            background-color: seagreen;
+	            border-radius: 5px;
+	        }
+	        .back-home a:hover {
+	            background-color: #0056b3;
+	        }
+	    </style>  
+	</head>  
+	<body>
+		<!-- 顶部图片 -->
+		    <div class="hero-image">
+		        <h1>武都旅游欢迎您的到来！</h1>
+		    </div>
+		    
+		    <!-- 图片小块区域 -->
+		    <div class="image-blocks">
+		        <!-- 图片小块1 -->
+		        <div class="image-block" onclick="showModal('风光旖旎', '陇南市武都区，甘肃省的一个璀璨明珠，以其独特而迷人的自然风光吸引着无数游人的目光。这里，山川秀美，河流纵横，自然景观与人文景观交相辉映，构成了一幅幅动人心魄的画卷。武都区坐落于秦岭山脉的南麓，得天独厚的地理位置赋予了这片土地无与伦比的自然美景。这里的山峦起伏，绿意盎然，尤其是春天来临之际，满山的野花竞相开放，犹如大地上的彩色织锦。夏季，山间云雾缭绕，仿佛仙境一般，让人流连忘返。秋天，层林尽染，五彩斑斓的树叶在阳光的照射下闪耀着金色的光芒。冬季，雪后的山峦更显静谧，银装素裹之中透出一股清新脱俗的美。')">
+		            <img src="img/wd/1.jpg"alt=风光旖旎">
+		            <div class="overlay">风光旖旎</div>
+		        </div>
+		        <!-- 图片小块2 -->
+		        <div class="image-block" onclick="showModal('历史遗迹', '武都区的历史可以追溯到远古时期，考古学家在这里发现了众多新石器时代的文化遗址，证明了数千年前就有先民在此繁衍生息。进入历史时期，武都区更是成为了多个朝代的边疆重镇，尤其在汉代，它是陇西郡的重要组成部分，承担着防御外敌、维护边疆稳定的重要作用。武都区的历史文化遗迹星罗棋布，其中最为著名的当属武都千佛洞，这是一处集佛教文化、雕塑艺术和建筑艺术于一体的宝贵文化遗产。石窟中的壁画和雕塑，以其精美的工艺和深厚的宗教内涵，吸引着无数国内外游客和学者的目光。此外，还有许多古代战场遗址、古墓葬群和古建筑，都是研究古代历史、文化和艺术的珍贵资料。')">
+		            <img src="img/wd/2.jpg" alt="历史遗迹">
+		            <div class="overlay">历史遗迹</div>
+		        </div>
+		        <!-- 图片小块3 -->
+		        <div class="image-block" onclick="showModal('文化节庆', '武都区的节庆文化还体现在多民族的交融上。这里的汉族、藏族、回族等多个民族，都会在各自的传统节日中，通过举办各种庆典活动来传承和展示自己的民族文化。比如藏族的藏历新年、回族的斋月等，都是武都区文化多样性的体现。总之，陇南市武都区的节日文化是多元而和谐的，它不仅展现了中国传统节日的韵味，也呈现了多民族文化的独特魅力。这些丰富多彩的节日活动，不仅为当地居民带来了欢乐和团聚的机会，也为外来游客提供了深入了解和体验武都文化的窗口。每年的节庆活动都是武都区最热闹、最富有魅力的时刻，也是游客们最期待的体验。')">
+		            <img src="img/wd/3.jpg" alt="文化节庆">
+		            <div class="overlay">文化节庆</div>
+		        </div>
+		        <!-- 图片小块4 -->
+		        <div class="image-block" onclick="showModal('美食天堂', '在武都区，您可以品尝到地道的甘肃面食，如牛肉面、刀削面等，这些面食以其筋道的口感和浓郁的汤底深受人们喜爱。而武都区的羊肉也是不容错过的美味，这里的羊肉质地鲜嫩，无论是烤羊肉串还是羊肉泡馍，都是让人回味无穷的佳肴。武都区还有许多特色小吃。洋芋搅团是当地的一道特色小吃，将煮熟的洋芋剥皮捣成泥状，搭配酸菜浆水或调入醋、蒜等调料，口感独特，清香可口。此外，武都区的豆腐脑、凉皮等小吃也同样受到游客的喜爱。陇南市武都区的美食是这片土地上不可或缺的一部分，它不仅滋养了当地人的身体，也丰富了他们的精神生活。每一道菜肴、每一款小吃都承载着武都人民对美食的热爱和对传统的坚守。')">
+		            <img src="img/wd/4.jpg" alt="美食天堂">
+		            <div class="overlay">美食天堂</div>
+		        </div>
+		        <!-- 图片小块5 -->
+		        <div class="image-block" onclick="showModal('户外活动', '陇南市武都区，这片位于甘肃省东南部的宝地，以其壮丽的自然风光和宜人的气候条件，成为了开展户外活动的理想之地。在这里，无论是热爱自然的探险者还是追求刺激的户外运动爱好者，都能找到属于自己的乐趣。武都区的山脉起伏，森林茂密，为徒步爱好者提供了绝佳的远足路线。在这些蜿蜒的山径上行走，旅行者可以尽情呼吸清新的空气，欣赏到令人心旷神怡的自然美景。春季，')">
+		            <img src="img/wd/5.jpg" alt="户外活动">
+		            <div class="overlay">户外活动</div>
+		        </div>
+		        <!-- 图片小块6 -->
+		        <div class="image-block" onclick="showModal('民俗风情', '武都区的民俗文化同样丰富多彩，这里的居民多为汉族，同时也有藏族、回族等多个民族和谐共处。各民族的传统节日、婚嫁习俗、民间艺术等，都蕴含着深厚的历史文化底蕴。特别是武都区的非物质文化遗产，如陇剧、花儿等，不仅是当地人民精神生活的重要组成部分，也是中华文化宝库中的瑰宝。')">
+		            <img src="img/wd/6.jpg" alt="民俗风情">
+		            <div class="overlay">民俗风情</div>
+		        </div>
+		    </div>
+		    
+		    <!-- 返回首页按钮 -->
+		    <div class="back-home">
+		        <a href="index.html">返回首页</a>
+		    </div>
+		    
+		    <!-- 弹窗 -->
+		    <div id="myModal" class="modal">
+		        <div class="modal-content">
+		            <span class="close" onclick="closeModal()">&times;</span>
+		            <h2 id="modalTitle"></h2>
+		            <p id="modalContent"></p>
+		        </div>
+		    </div>
+		    
+		    <script>
+		        function showModal(title, content) {
+		            var modal = document.getElementById("myModal");
+		            var modalTitle = document.getElementById("modalTitle");
+		            var modalContent = document.getElementById("modalContent");
+		            
+		            modalTitle.textContent = title;
+		            modalContent.textContent = content;
+		            
+		            modal.style.display = "block";
+		        }
+		        
+		        function closeModal() {
+		            var modal = document.getElementById("myModal");
+		            modal.style.display = "none";
+		        }
+		        
+		        window.onclick = function(event) {
+		            if (event.target == modal) {
+		                closeModal();
+		            }
+		        }
+				function showModal(title, content) {
+				            var modal = document.getElementById("myModal");
+				            var modalTitle = document.getElementById("modalTitle");
+				            var modalContent = document.getElementById("modalContent");
+				            
+				            modalTitle.textContent = title;
+				            modalContent.textContent = content;
+				            
+				            modal.style.display = "block";
+				        }
+				        
+				        function closeModal() {
+				            var modal = document.getElementById("myModal");
+				            modal.style.display = "none";
+				        }
+				        
+				        window.onclick = function(event) {
+				            if (event.target == modal) {
+				                closeModal();
+				            }
+				        }
+		    </script>
+			</div>
+					<footer id='foot'>
+					<div class="top">
+						<div class="block left ">
+							<h2>友情链接</h2>
+							<hr>
+							<ul>
+								<a href="https://www.mct.gov.cn/" target="_blank">文化和旅游部</a><br>  
+								<a href="https://wlt.gansu.gov.cn/" target="_blank">甘肃省文化和旅游厅</a><br>  
+								<a href="https://www.longnan.gov.cn/zfxxgk/public/column/4455621?type=4&action=list" target="_blank">陇南市文化广电和旅游局</a><br>  
+								<a href="https://www.12306.cn/index/" class="sky1">火车票查询</a><br>
+							</ul>
+						</div>
+						<div class="block center ">
+							<h2>友情链接</h2>
+							<hr>
+							<ul>
+								<a href="https://www.ctrip.com/" target="_blank">携程旅行</a><br>
+								<a href="https://www.tianxun.com/" target="_blank">特价机票</a><br>
+								<a href="https://cyberpolice.mps.gov.cn/#/"target="_blank">有害信息举报专区</a><br>
+								<a href="https://www.creditchina.gov.cn/"target="_blank">信用中国</a><br>
+							</ul>
+						</div>
+						<div class="block right ">
+							<h2>友情链接</h2>
+							<hr>
+							<ul>
+								<a href="https://www.tuniu.com/" target="_blank">途牛旅行</a><br>
+								<a href="https://www.qunar.com/" target="_blank">去哪儿旅行网</a><br>
+								<a href="https://www.ly.com/" target="_blank">同程旅行网</a><br>
+								<a href="https://www.mafengwo.cn/" target="_blank">马蜂窝</a><br>
+							</ul>
+						</div>
+					</div>
+					<div class="bottom">
+						2024 陇南市旅游推荐网 | LNLYTJW | 版权所有 &copy; 2024 陇南市旅游推荐网
+					</div>
+				</footer>
+		</body>  
+		</html>

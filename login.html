@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="auto" content='spider'>
+	<meta charset="UTF-8">
+	<title>陇南市旅游推荐网</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/information.css">
+	<link rel="stylesheet" type="text/css" href="css/buy.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<header id='header'>
+		<div class='center'>
+			<h1 class="logo">陇南旅游推荐网</h1>
+			<nav style='overflow:hidden;'>
+				<h2 class="none">网站导航</h2>
+			<ul class="link">
+					<li ><a href="index.html">首页</a></li>
+					<li ><a href="information.html">旅游咨询</a></li>
+					<li ><a href="buy.html">机票订购</a></li>
+					<li><a href="scenery.html">风景欣赏</a></li>
+					<li><a href="about.html">关于我们</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="headline">
+		<div class="center">
+			<hgroup>				
+				<h2>登录</h2>
+				<h3>欢迎您来到陇南旅游推荐网</h3>
+			</hgroup>
+		</div>
+	</div>
+	<style>
+	        body {
+	            font-family: Arial, sans-serif;
+	            background-color: #f4f4f4;
+	            margin: 0;
+	            padding: 0;
+	        }
+	        .login-container {
+	            max-width: 400px;
+	            margin: 50px auto;
+	            padding: 20px;
+	            background-color: #fff;
+	            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	        }
+	        .login-header {
+	            text-align: center;
+	            margin-bottom: 20px;
+	        }
+	        .login-header h2 {
+	            color: #333;
+	        }
+	        .form-group {
+	            margin-bottom: 15px;
+	        }
+	        .form-group label {
+	            display: block;
+	            margin-bottom: 5px;
+	            color: #666;
+	        }
+	        .form-group input {
+	            width: 100%;
+	            padding: 10px;
+	            border: 1px solid #ddd;
+	            border-radius: 4px;
+	        }
+	        .form-group input[type="submit"] {
+	            background-color: #5cb85c;
+	            color: white;
+	            cursor: pointer;
+	        }
+	        .form-group input[type="submit"]:hover {
+	            background-color: #4cae4c;
+	        }
+	        .account-links {
+	            text-align: right;
+	            margin-top: 10px;
+	        }
+	        .account-links a {
+	            color: #337ab7;
+	            text-decoration: none;
+	            margin-left: 10px;
+	        }
+	        .account-links a:first-child {
+	            float: left;
+	        }
+	    </style>
+	</head>
+	<body>
+	    <div class="login-container">
+	        <div class="login-header">
+	            <h2>登录</h2>
+	        </div>
+	        <form id="loginForm">
+	            <div class="form-group">
+	                <label for="username">用户名</label>
+	                <input type="text" id="username" name="username" required>
+	            </div>
+	            <div class="form-group">
+	                <label for="password">密码</label>
+	                <input type="password" id="password" name="password" required>
+	            </div>
+	            <div class="form-group">
+	                <input type="submit" value="登录">
+	            </div>
+	        </form>
+	        <div class="account-links">
+	            <a href="#" id="registerLink">注册账号</a>
+	            <a href="#" id="forgetPasswordLink">忘记密码?</a>
+	        </div>
+	    </div>
+	
+	    <script>
+	        document.getElementById('loginForm').addEventListener('submit', function(event) {
+	            event.preventDefault();
+	            var username = document.getElementById('username').value;
+	            var password = document.getElementById('password').value;
+	            var adminAccount = {
+	                username: 'admin',
+	                password: 'admin123'
+	            };
+	            if (username === adminAccount.username && password === adminAccount.password) {
+	                window.location.href = 'index.html';
+	            } else {
+	                alert('用户名或密码错误！');
+	            }
+	        });
+	
+	        document.getElementById('registerLink').addEventListener('click', function(event) {
+	            event.preventDefault();
+	            var username = generateRandomString(5);
+	            var password = generateRandomString(8);
+	            alert('注册成功！您的账号是 ' + username + '，密码是 ' + password + '。');
+	            // 这里应该有一个将账号信息保存到服务器的逻辑
+	        });
+	
+	        document.getElementById('forgetPasswordLink').addEventListener('click', function(event) {
+	            event.preventDefault();
+	            alert('忘记密码功能暂未实现。');
+	            // 这里应该有一个找回密码的逻辑
+	        });
+	
+	        function generateRandomString(length) {
+	            var result = '';
+	            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	            var charactersLength = characters.length;
+	            for (var i = 0; i < length; i++) {
+	                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	            }
+	            return result;
+	        }
+	    </script>
+	</body>
+	</html>

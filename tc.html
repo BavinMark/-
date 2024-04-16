@@ -1,0 +1,211 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>宕昌旅游信息</title>
+	  <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css"> 
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/buy.css">
+</head>  
+<body>  
+  <header id='header'>
+  	<div class='center'>
+  		<h1 class="logo5">宕昌旅游信息</h1>
+  		<nav style='overflow:hidden;'>
+  			<h2 class="none">网站导航</h2>
+  		<ul class="link">
+  				<li ><a href="index.html">首页</a></li>
+  				<li><a href="information.html">旅游咨询</a></li>
+  				<li><a href="buy.html">机票订购</a></li>
+  				<li><a href="scenery.html">风景欣赏</a></li>
+				<li><a href="about.html">关于我们</a></li>
+  			</ul>
+  		</nav>
+  	</div>
+  </header>
+<style>
+        /* 顶部图片样式 */
+        .hero-image {
+            height: 400px;
+            background-image: url('img/tc/tc.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 20px;
+        }
+        /* 图片小块样式 */
+        .image-blocks {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .image-block {
+            width: calc(33% - 10px); /* 减去间距 */
+            margin: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .image-block img {
+            width: 100%;
+            display: block;
+            transition: opacity 0.5s;
+        }
+        .image-block:hover img {
+            opacity: 0.7;
+        }
+        .image-block .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            z-index: 1;
+        }
+        .image-block:hover .overlay {
+            opacity: 1;
+        }
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* 返回首页按钮样式 */
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: seagreen;
+            border-radius: 5px;
+        }
+        .back-home a:hover {
+            background-color: #0056b3;
+        }
+    </style>  
+</head>  
+<body>
+	<!-- 顶部图片 -->
+	    <div class="hero-image">
+	        <h1>宕昌旅游欢迎您的到来！</h1>
+	    </div>
+	    
+	    <!-- 图片小块区域 -->
+	    <div class="image-blocks">
+	        <!-- 图片小块1 -->
+	        <div class="image-block" onclick="showModal('风光旖旎', '宕昌县，位于甘肃省南部、陇南市西北部，是一个自然风光旖旎、生态资源丰富的地方。这里地处青藏高原边缘岷山山系与西秦岭延伸交错地带，拥有独特的地理环境和层次分明的气候特征，形成了“一山有四季，十里不同天”的立体气候，为多样的自然景观提供了得天独厚的条件。宕昌县的自然风光丰富多彩，从雄伟的山峰到广袤的草原，从清澈的湖泊到幽深的峡谷，每一处都充满了生机与活力。这里不仅是自然爱好者的天堂，也是历史和文化探索者的宝地。宕昌县以其独特的自然景观和深厚的文化底蕴，成为了一个值得一游的地方')">
+	            <img src="img/tc/1.jpg" alt="风光旖旎">
+	            <div class="overlay">风光旖旎</div>
+	        </div>
+	        <!-- 图片小块2 -->
+	        <div class="image-block" onclick="showModal('历史遗迹', '宕昌县的历史文化源远流长，从古西戎的世居地到羌族的建立，再到历代的变迁，宕昌见证了中国历史的多个重要时期。这里的文化遗产丰富，尤其是官鹅沟景区的历史人文素材，为宕昌增添了独特的文化魅力。宕昌的历史和文化，不仅是研究中国历史的重要资料，也是现代旅游发展的重要资源。')">
+	            <img src="img/tc/2.jpg" alt="历史遗迹">
+	            <div class="overlay">历史遗迹</div>
+	        </div>
+	        <!-- 图片小块3 -->
+	        <div class="image-block" onclick="showModal('文化节庆', '宕昌官鹅沟文化旅游节是宕昌县的一项重要文化活动，旨在推广宕昌的旅游资源，特别是官鹅沟的自然风光和人文景观。官鹅沟景区是甘肃省重点建设的大景区之一，拥有丰富的生态资源和历史文化遗产。文化旅游节期间，游客可以参与各种户外活动，如徒步、摄影、民俗体验等，同时还能欣赏到当地民族的歌舞表演和传统手工艺品展示。')">
+	            <img src="img/tc/3.jpg" alt="文化节庆">
+	            <div class="overlay">文化节庆</div>
+	        </div>
+	        <!-- 图片小块4 -->
+	        <div class="image-block" onclick="showModal('美食天堂', '“千年药乡”的宕昌变蛋，皮蛋的专业名称叫变蛋，顾名思义就是变了颜色的蛋。松花蛋只是俗称（因花纹似松花）。中国人自古有饮食保健养生的习惯，千年药乡宕昌人探寻最合宜的药膳方式，非遗美食谷御变蛋采用传统手工，精选农家散养鲜鸡蛋，用石灰、草灰、盐等腌制而成，加入当归、黄芪、党参等宕昌特有的中药材制作独具特色的药膳皮蛋。')">
+	            <img src="img/tc/4.jpg" alt="美食天堂">
+	            <div class="overlay">美食天堂</div>
+	        </div>
+	        <!-- 图片小块5 -->
+	        <div class="image-block" onclick="showModal('户外活动', '官鹅沟是宕昌县最著名的自然景区之一，也是国家5A级旅游景区。这里以其独特的自然风光和丰富的生态资源吸引着大量游客。户外活动爱好者可以在这里进行徒步、登山、摄影等活动。冬季，官鹅沟的冰雪旅游活动更是吸引了众多省内外游客前来体验。八力草原和滩子牧场是宕昌县的另外两个自然景观，这里的广袤草原和丰富的草场资源为骑马、草原露营等户外活动提供了理想的场所。游客可以在这里体验草原生活，感受大自然的宁静与辽阔。')">
+	            <img src="img/tc/5.jpg" alt="户外活动">
+	            <div class="overlay">户外活动</div>
+	        </div>
+	        <!-- 图片小块6 -->
+	        <div class="image-block" onclick="showModal('民俗风情', '宕昌羌族文化节是庆祝和展示羌族文化的重要活动。羌族是中国西北、西南地区的一个古老少数民族，宕昌羌是西羌的一支，拥有独特的语言、服饰、建筑和宗教信仰。文化节期间，会举办各种羌族文化展示活动，如羌族舞蹈、音乐、服饰展演，以及羌族传统手工艺制品的展示和销售。这些活动不仅让游客深入了解羌族文化，也为当地羌族人民提供了展示和传承自己文化的机会。')">
+	            <img src="img/tc/6.jpg" alt="民俗风情">
+	            <div class="overlay">民俗风情</div>
+	        </div>
+	    </div>
+	    
+	    <!-- 返回首页按钮 -->
+	    <div class="back-home">
+	        <a href="index.html">返回首页</a>
+	    </div>
+	    
+	    <!-- 弹窗 -->
+	    <div id="myModal" class="modal">
+	        <div class="modal-content">
+	            <span class="close" onclick="closeModal()">&times;</span>
+	            <h2 id="modalTitle"></h2>
+	            <p id="modalContent"></p>
+	        </div>
+	    </div>
+	    
+	    <script>
+	        function showModal(title, content) {
+	            var modal = document.getElementById("myModal");
+	            var modalTitle = document.getElementById("modalTitle");
+	            var modalContent = document.getElementById("modalContent");
+	            
+	            modalTitle.textContent = title;
+	            modalContent.textContent = content;
+	            
+	            modal.style.display = "block";
+	        }
+	        
+	        function closeModal() {
+	            var modal = document.getElementById("myModal");
+	            modal.style.display = "none";
+	        }
+	        
+	        window.onclick = function(event) {
+	            if (event.target == modal) {
+	                closeModal();
+	            }
+	        }
+	    </script>
+	</body>  
+	</html>

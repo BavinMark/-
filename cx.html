@@ -1,0 +1,249 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>成县旅游信息</title>
+	  <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css"> 
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/buy.css">
+</head>  
+<body>  
+  <header id='header'>
+  	<div class='center'>
+  		<h1 class="logo4">成县旅游信息</h1>
+  		<nav style='overflow:hidden;'>
+  			<h2 class="none">网站导航</h2>
+  		<ul class="link">
+  				<li ><a href="index.html">首页</a></li>
+  				<li><a href="information.html">旅游咨询</a></li>
+  				<li><a href="buy.html">机票订购</a></li>
+  				<li><a href="scenery.html">风景欣赏</a></li>
+				<li><a href="about.html">关于我们</a></li>
+  			</ul>
+  		</nav>
+  	</div>
+  </header>
+    <style>
+        /* 顶部图片样式 */
+        .hero-image {
+            height: 400px;
+            background-image: url('img/cx/cx.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 20px;
+        }
+        /* 图片小块样式 */
+        .image-blocks {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .image-block {
+            width: calc(33% - 10px); /* 减去间距 */
+            margin: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .image-block img {
+            width: 100%;
+            display: block;
+            transition: opacity 0.5s;
+        }
+        .image-block:hover img {
+            opacity: 0.7;
+        }
+        .image-block .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            z-index: 1;
+        }
+        .image-block:hover .overlay {
+            opacity: 1;
+        }
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* 返回首页按钮样式 */
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-home a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: seagreen;
+            border-radius: 5px;
+        }
+        .back-home a:hover {
+            background-color: #0056b3;
+        }
+    </style>  
+</head>  
+<body>
+	<!-- 顶部图片 -->
+	    <div class="hero-image">
+	        <h1>成县旅游欢迎您的到来！</h1>
+	    </div>
+	    
+	    <!-- 图片小块区域 -->
+	    <div class="image-blocks">
+	        <!-- 图片小块1 -->
+	        <div class="image-block" onclick="showModal('风光旖旎', '成县，位于甘肃省东南部，是陇南市下辖的一个县。这里自然风光旖旎，地形多样，既有峻峭的山峰，又有清澈的河流，还有广袤的森林和草原，构成了一幅幅美丽的自然画卷。成县的山脉属于秦岭的延伸部分，这里的山峰峻峭，峡谷幽深。最著名的山脉之一是成县的鸡峰山，山势险峻，景色壮观。')">
+	            <img src="img/cx/1.jpg" alt="风光旖旎">
+	            <div class="overlay">风光旖旎</div>
+	        </div>
+	        <!-- 图片小块2 -->
+	        <div class="image-block" onclick="showModal('历史遗迹', '成县的历史文化源远流长，这里曾是古代丝绸之路的重要站点，留下了许多历史遗迹和文化古迹。成县的历史文化、红色文化和民俗文化的魅力，让人们在享受冰雪之乐的同时，感受到成县的地方文化内涵。成县市民王静表示，升级后的冰雕作品更具成县地方文化内涵，让孩子在享受冰雪之乐的同时，感受到成县历史文化、红色文化和民俗文化的魅力。')">
+	            <img src="img/cx/2.jpg" alt="历史遗迹">
+	            <div class="overlay">历史遗迹</div>
+	        </div>
+	        <!-- 图片小块3 -->
+	        <div class="image-block" onclick="showModal('文化节庆', '成县的春节文化活动丰富多彩，体现了当地人民对传统文化的传承与尊重。春节期间，成县组织了“非遗过大年·文化进万家”、“文物新语”博物馆陪您过大年、“翰墨迎新春·丹青绘新篇”等系列文化活动，让群众在春节中细品文化佳酿，乐享美好生活。这些活动不仅让群众感受到文化情怀和温度，更体味到了久违的儿时年味，勾起浓浓的乡愁记忆。')">
+	            <img src="img/cx/3.jpg" alt="文化节庆">
+	            <div class="overlay">文化节庆</div>
+	        </div>
+	        <!-- 图片小块4 -->
+	        <div class="image-block" onclick="showModal('美食天堂', '成县马占祥馄饨是甘肃省成县的一道著名的地方特色美食，以其独特的风味和制作工艺在当地享有盛誉。这道美食不仅仅是一道简单的小吃，更承载着成县人对家乡味道的记忆和情感。一碗热气腾腾的马占祥牛肉馄饨，香气扑鼻，汤味浓郁。食客们会用筷子夹出一颗牛肉臊子细细咀嚼，再吃一颗馄饨，嚼一瓣大蒜，这样的搭配让人回味无穷。吃完后，还会在剩下的汤里再捞一捞，确保没有遗漏任何一块牛肉丁，然后端起碗呼噜呼噜喝完汤。这样的一碗馄饨，不仅仅是满足口腹之欲，更是一种对家乡味道的怀念和享受。')">
+	            <img src="img/cx/4.jpg" alt="美食天堂">
+	            <div class="overlay">美食天堂</div>
+	        </div>
+	        <!-- 图片小块5 -->
+	        <div class="image-block" onclick="showModal('户外活动', '成县陇南大道两旁新安装的智慧路灯，不仅提升了城市的现代化水平，还为夜间户外活动提供了便利。这些智慧路灯集多种城市管理功能于一身，如交通信号灯、信息发布屏、5G基站、无线Wi-Fi、智能垃圾桶等，为市民和游客提供了一个安全、便捷、舒适的夜间活动环境。成县东河两岸经过改造，现已成为市民休闲娱乐的好去处。河面碧波荡漾，两岸高楼林立，步道、公园、绿化景观组成了一道美丽的滨河风景线。在这里，市民可以进行散步、慢跑、骑行等户外活动，享受自然美景带来的宁静与放松。')">
+	            <img src="img/cx/5.jpg" alt="户外活动">
+	            <div class="overlay">户外活动</div>
+	        </div>
+	        <!-- 图片小块6 -->
+	        <div class="image-block" onclick="showModal('民俗风情', '成县的民俗文化同样引人入胜。其中，“高抬”是成县春节社火的一种表现形式，被誉为“空中戏驾”。据传起源于明朝万历年间，成县历史上曾经是富庶之地，吸引了山西、四川等地人口大量涌入。北泉“高抬”是一种集铁工、木工、纸扎、绘画和戏剧等为一体的综合造型艺术，内容丰富多彩，从上古的三皇五帝到历史故事、轶闻野史、传奇故事等，无所不包。这种民俗艺术不仅具有很高的艺术性和观赏性，也是成县历史文化发展的结晶，是一份珍贵的文化遗产。')">
+	            <img src="img/cx/6.jpg" alt="民俗风情">
+	            <div class="overlay">民俗风情</div>
+	        </div>
+	    </div>
+	    
+	    <!-- 返回首页按钮 -->
+	    <div class="back-home">
+	        <a href="index.html">返回首页</a>
+	    </div>
+	    
+	    <!-- 弹窗 -->
+	    <div id="myModal" class="modal">
+	        <div class="modal-content">
+	            <span class="close" onclick="closeModal()">&times;</span>
+	            <h2 id="modalTitle"></h2>
+	            <p id="modalContent"></p>
+	        </div>
+	    </div>
+	    
+	    <script>
+	        function showModal(title, content) {
+	            var modal = document.getElementById("myModal");
+	            var modalTitle = document.getElementById("modalTitle");
+	            var modalContent = document.getElementById("modalContent");
+	            
+	            modalTitle.textContent = title;
+	            modalContent.textContent = content;
+	            
+	            modal.style.display = "block";
+	        }
+	        
+	        function closeModal() {
+	            var modal = document.getElementById("myModal");
+	            modal.style.display = "none";
+	        }
+	        
+	        window.onclick = function(event) {
+	            if (event.target == modal) {
+	                closeModal();
+	            }
+	        }
+	    </script>
+		</div>
+				<footer id='foot'>
+				<div class="top">
+					<div class="block left ">
+						<h2>友情链接</h2>
+						<hr>
+						<ul>
+							<a href="https://www.mct.gov.cn/" target="_blank">文化和旅游部</a><br>  
+							<a href="https://wlt.gansu.gov.cn/" target="_blank">甘肃省文化和旅游厅</a><br>  
+							<a href="https://www.longnan.gov.cn/zfxxgk/public/column/4455621?type=4&action=list" target="_blank">陇南市文化广电和旅游局</a><br>  
+							<a href="https://www.12306.cn/index/" class="sky1">火车票查询</a><br>
+						</ul>
+					</div>
+					<div class="block center ">
+						<h2>友情链接</h2>
+						<hr>
+						<ul>
+							<a href="https://www.ctrip.com/" target="_blank">携程旅行</a><br>
+							<a href="https://www.tianxun.com/" target="_blank">特价机票</a><br>
+							<a href="https://cyberpolice.mps.gov.cn/#/"target="_blank">有害信息举报专区</a><br>
+							<a href="https://www.creditchina.gov.cn/"target="_blank">信用中国</a><br>
+						</ul>
+					</div>
+					<div class="block right ">
+						<h2>友情链接</h2>
+						<hr>
+						<ul>
+							<a href="https://www.tuniu.com/" target="_blank">途牛旅行</a><br>
+							<a href="https://www.qunar.com/" target="_blank">去哪儿旅行网</a><br>
+							<a href="https://www.ly.com/" target="_blank">同程旅行网</a><br>
+							<a href="https://www.mafengwo.cn/" target="_blank">马蜂窝</a><br>
+						</ul>
+					</div>
+				</div>
+				<div class="bottom">
+					2024 陇南市旅游推荐网 | LNLYTJW | 版权所有 &copy; 2024 陇南市旅游推荐网
+				</div>
+			</footer>
+	</body>  
+	</html>
